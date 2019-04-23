@@ -1,4 +1,4 @@
-let dataBase = require('../../dataBase').getInstance();
+const dataBase = require('../../dataBase').getInstance();
 
 module.exports = async (req, res) => {
 

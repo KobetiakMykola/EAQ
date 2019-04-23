@@ -8,9 +8,11 @@ module.exports = async (req, res) => {
         const Menu = dataBase.getModel('Menu');
 
         const TypeFromParams = req.params.type;
+        console.log(TypeFromParams);
         if (!TypeFromParams) throw new Error('No type');
 
         const typeDrinkInfo = req.body;
+        console.log(typeDrinkInfo);
         if (!typeDrinkInfo) throw new Error('Body is empty');
 
         const {type} = typeDrinkInfo;
@@ -31,7 +33,7 @@ module.exports = async (req, res) => {
 
         const isExist = await Drink_type.findOne({
             where:{
-                type,
+                type: TypeFromParams,
                 menu_id: menuId
             }
         });

@@ -28,8 +28,7 @@ module.exports = async (req, res) => {
             where: {
                 type,
                 menu_id: menuId
-            },
-            include: [Menu]
+            }
         });
 
         if (!isExist) throw new Error('Type with this name not exist');
